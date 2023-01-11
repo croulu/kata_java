@@ -10,4 +10,8 @@ public class StringEndsWith {
             return posEndingInStr == str.length() - ending.length() ? true : false;
         }
     }
+
+    public static boolean goodPracticeStringEndsWith(String str, String ending) {
+        return str.endsWith(ending);
+    }
 }

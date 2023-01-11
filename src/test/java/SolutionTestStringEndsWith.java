@@ -24,8 +24,32 @@ public class SolutionTestStringEndsWith {
         check("abc\n", "abc", false);
     }
 
+    @Test
+    public void goodPracticeStaticTests() {
+        goodPracticeCheck("samurai", "ai", true);
+        goodPracticeCheck("sumo", "omo", false);
+        goodPracticeCheck("ninja", "ja", true);
+        goodPracticeCheck("sensei", "i", true);
+        goodPracticeCheck("samurai", "ra", false);
+        goodPracticeCheck("abc", "abcd", false);
+        goodPracticeCheck("abc", "abc", true);
+        goodPracticeCheck("abcabc", "bc", true);
+        goodPracticeCheck("ails", "fails", false);
+        goodPracticeCheck("fails", "ails", true);
+        goodPracticeCheck("this", "fails", false);
+        goodPracticeCheck("this", "", true);
+        goodPracticeCheck(":-)", ":-(", false);
+        goodPracticeCheck("!@#$%^&*() :-)", ":-)", true);
+        goodPracticeCheck("abc\n", "abc", false);
+    }
+
     private static void check(String str, String ending, boolean expected) {
         boolean result = StringEndsWith.stringEndsWith(str, ending);
+        assertEquals(expected, result, "Expected solution(\"" + str + "\", \"" + ending + "\") to return " + expected);
+    }
+
+    private static void goodPracticeCheck(String str, String ending, boolean expected) {
+        boolean result = StringEndsWith.goodPracticeStringEndsWith(str, ending);
         assertEquals(expected, result, "Expected solution(\"" + str + "\", \"" + ending + "\") to return " + expected);
     }
 }
