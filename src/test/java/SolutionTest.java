@@ -14,4 +14,14 @@ class SolutionTest {
         assertEquals("boat your row row row", reverseWords("row row row your boat"));
         assertEquals("", reverseWords(""));
     }
+
+    @Test
+    void goodPracticeSampleTests() {
+        assertEquals("world! hello", goodPracticeReverseWords("hello world!"));
+        assertEquals("this like speak doesn't yoda", goodPracticeReverseWords("yoda doesn't speak like this"));
+        assertEquals("foobar", goodPracticeReverseWords("foobar"));
+        assertEquals("editor kata", goodPracticeReverseWords("kata editor"));
+        assertEquals("boat your row row row", goodPracticeReverseWords("row row row your boat"));
+        assertEquals("", goodPracticeReverseWords(""));
+    }
 }
